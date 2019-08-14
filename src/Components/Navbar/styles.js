@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
 
   position: fixed;
-  left:30%;
-  
+  left:25%;
+  display:block;
   float:left;
-  width: 70%;
+  width: 75%;
   height: 90px;
   background: white;
   line-height:90px;

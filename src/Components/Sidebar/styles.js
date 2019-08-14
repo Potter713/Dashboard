@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 30%;
+  width: 25%;
   height: 100%;
   background: black;
   float:left;
@@ -25,7 +25,7 @@ export const ContainerItens = styled.div`
 
 export const Link = styled.div`
   cursor: pointer;
-  width: 90%;
+  width: 80%;
   height: 60px;
   color: white;
   font-size: 18px;
