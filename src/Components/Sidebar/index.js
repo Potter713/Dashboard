@@ -1,16 +1,18 @@
 import React, {useState} from 'react';
 
-import { Container, Header, ContainerItens, Link } from './styles';
+import { Link, BrowserRouter, Switch } from 'react-router-dom';
+
+import { Container, Header, ContainerItens, Item } from './styles';
 
 export default function Sidebar() {
 
   const [menus, setmenus] = useState([
-    { page: "Dashboard", url:"", name: "DASHBOARD", selected: true},
-    { page: "User Profile", url:"", name: "USER PROFILE" },
-    { page: "Table List", url:"", name: "TABLE LIST" },
-    { page: "Icons", url:"", name: "ICONS" },
-    { page: "Maps", url:"", name: "MAPS" },
-    { page: "Notifications", url:"", name: "NOTIFICATIONS" }
+    { page: "Dashboard", url:"Dashboard", name: "DASHBOARD", selected: true},
+    { page: "User Profile", url:"UserProfile", name: "USER PROFILE" },
+    { page: "Table List", url:"TableList", name: "TABLE LIST" },
+    { page: "Icons", url:"Icons", name: "ICONS" },
+    { page: "Maps", url:"Maps", name: "MAPS" },
+    { page: "Notifications", url:"Notifications", name: "NOTIFICATIONS" }
   ])
 
   function selected(name, page){
@@ -39,9 +41,16 @@ export default function Sidebar() {
       <ContainerItens>
 
         {menus.map(menu => (
-        <Link id={menu.name} select={menu.selected} onClick={ () => selected(menu.name, menu.page)}>
-        {menu.name}
-        </Link>))} 
+        <BrowserRouter>
+          <Switch>
+            <Link to={`/${menu.url}`}>
+              <Item id={menu.name} select={menu.selected} onClick={ () => selected(menu.name, menu.page)}>
+              {menu.name}
+              </Item>
+            </Link>
+          </Switch>
+        </BrowserRouter>
+        ))} 
 
       </ContainerItens>
 

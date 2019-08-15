@@ -23,7 +23,7 @@ export const ContainerItens = styled.div`
   width: 100%;
 `;
 
-export const Link = styled.div`
+export const Item = styled.div`
   cursor: pointer;
   width: 80%;
   height: 60px;
